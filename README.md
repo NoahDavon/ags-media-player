@@ -39,4 +39,4 @@ A stylized, interactive media player popup built with [Aylur's GTK Shell (AGS)](
 
 ## Learning Project
 
-This repository was created as a learning exercise for exploring the GTK4 version of AGS and MPRIS integration. I highly recommend giving it a go yourself, especially if you come from a React background like I have. Feel free to use it as a reference for your own AGS configurations! This was 30% vibe coding, 27% banging my head against docs, 43% shouting at Gemini, and a 100% fun use of my time.
+This repository was created as a learning exercise for exploring the GTK4 version of AGS and MPRIS integration, mainly motivated by my inability to find a player that integrated well with my Hyprland dotfiles. Thought I'd save anyone with the same problem the trouble. Though I highly recommend giving it a go yourself, especially if you come from a React background like I have. Feel free to use it as a reference for your own AGS configurations! This was 30% vibe coding, 27% banging my head against docs, 43% shouting at Gemini, and a 100% fun use of my time.
