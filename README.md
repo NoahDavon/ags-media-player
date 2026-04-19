@@ -10,15 +10,10 @@ A stylized, interactive media player popup built with [Aylur's GTK Shell (AGS)](
     - **Manual Seeking**: Click or drag the progress bar to jump to a specific time.
     - **Time Display**: Toggle between total track length and remaining time by clicking the time label.
 - **Multiple Player Support**: Easily cycle through multiple active media players (e.g., Spotify, Browser, MPV).
-- **Interactive UI**: 
-    - Hover-sensitive info overlay.
-    - Click-to-dismiss background (Clicking outside the player closes the window).
-    - Keyboard support (Press `Escape` to close).
-- **Modern Aesthetics**: Built with SCSS, featuring transparency, rounded corners, and smooth hover transitions.
 
 ## Prerequisites
 
-- [AGS (v2 / Astal)](https://aylur.github.io/astal/guide/getting-started)
+- [AGS (v2 / Astal)](https://aylur.github.io/ags/)
 - `libadwaita`
 - `playerctl` (for MPRIS backend support)
 
@@ -44,4 +39,4 @@ A stylized, interactive media player popup built with [Aylur's GTK Shell (AGS)](
 
 ## Learning Project
 
-This repository was created as a learning exercise for exploring the GTK4 version of AGS and MPRIS integration. I highly recommend giving it a go yourself, especially if you come from a React background like I have. Feel free to use it as a reference for your own AGS configurations! This was 30% vibe coding, 27% banging my head against docs, 43% shouting at Gemini, and a 100% fun use of my time.
+This repository was created as a learning exercise for exploring the GTK4 version of AGS and MPRIS integration, mainly motivated by my inability to find a player that integrated well with my Hyprland dotfiles. Thought I'd save anyone with the same problem the trouble. Though I highly recommend giving it a go yourself, especially if you come from a React background like I have. Feel free to use it as a reference for your own AGS configurations! This was 30% vibe coding, 27% banging my head against docs, 43% shouting at Gemini, and a 100% fun use of my time.
