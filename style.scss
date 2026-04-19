@@ -1,0 +1,195 @@
+// https://gitlab.gnome.org/GNOME/gtk/-/blob/gtk-3-24/gtk/theme/Adwaita/_colors-public.scss
+$fg-color: #{"@theme_fg_color"};
+$bg-color: #282828;
+$border-color: #504945;
+$text-main: #ebdbb2;
+$text-muted: #a89984;
+$accent: #b8bb26;
+$accent-hover: #98971a;
+$surface: #3c3836;
+
+window.Bar {
+    background: transparent;
+    color: $fg-color;
+    font-weight: bold;
+
+    >centerbox {
+        background: $bg-color;
+        border-radius: 10px;
+        margin: 8px;
+    }
+
+
+}
+
+window#media-popup {
+    min-height: 500px;
+    overflow: hidden;
+
+    button {
+        border-radius: 99999px;
+        max-width: 50px;
+        max-height: 50px;
+        aspect-ratio: 1;
+        background-color: rgba(255, 255, 255, 0.3);
+        ;
+        color: black;
+        margin: 2px;
+        transition: 200ms background-color ease;
+
+        // Hover State
+        &:hover {
+            background-color: rgba(255, 255, 255, 0.6);
+        }
+
+        // Clicked (Pressed) State
+        &:active {
+            background-color: rgba(255, 255, 255, 0.8);
+            transform: scale(0.95); // Slight "push" effect
+        }
+    }
+
+    .media-window-bg {
+        background-color: transparent;
+        border-radius: 12px;
+        min-width: 400px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+        overflow: hidden;
+    }
+
+    .player-container {
+        overflow: hidden;
+        background-color: $bg-color;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+        border: 2px solid $border-color;
+        border-radius: 16px;
+        margin-bottom: 0;
+
+        .cover {
+            min-width: 120px;
+            min-height: 120px;
+            background-size: cover;
+            background-position: center;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+        }
+
+        .info-container {
+            min-width: 250px;
+            background-color: #111111;
+            opacity: 0.1;
+            transition: 200ms;
+            overflow: hidden;
+
+            &:hover {
+                opacity: 0.8;
+            }
+
+            padding: 12px;
+            padding-bottom: 24px;
+            border-radius: 16px;
+            border-top-left-radius: 24px;
+            border-top-right-radius: 24px;
+
+
+            .title {
+                color: white;
+                font-size: 16px;
+                font-weight: bold;
+            }
+
+            .artist {
+                color: rgb(185, 185, 185);
+                font-size: 14px;
+            }
+
+            .controls {
+                margin-top: 8px;
+
+                button {
+                    background-color: transparent;
+                    color: $text-main;
+                    border-radius: 50%;
+                    min-width: 40px;
+                    min-height: 40px;
+                    border: none;
+                    box-shadow: none;
+
+                    &:hover {
+                        background-color: $surface;
+                    }
+
+                    &.play-pause {
+                        background-color: $accent;
+                        color: $bg-color;
+
+                        &:hover {
+                            background-color: $accent-hover;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .empty-state {
+        color: #928374;
+        font-size: 16px;
+        padding: 20px;
+    }
+}
+
+.progress-container {
+    margin-top: 8px;
+    margin-bottom: 4px;
+
+    .time-text {
+        font-size: 12px;
+        color: $text-muted;
+        font-family: monospace; // Keeps the numbers from jumping around
+    }
+
+    .time-button {
+        background: transparent !important;
+        border: none;
+        box-shadow: none;
+        padding: 0;
+        min-height: 0;
+        min-width: 0;
+
+        &:hover {
+
+            background-color: transparent;
+
+            .time-text {
+                background-color: transparent;
+                color: $text-main; // Slight highlight to show it's clickable
+            }
+        }
+    }
+
+    progressbar {
+        transition: 200ms ease;
+
+        &:hover {
+            transform: translateY(-1px);
+            transform: scale(1.02);
+            box-shadow: -1px 3px 10px 1px rgba(134, 134, 134, 0.189);
+
+        }
+
+        // The background track
+        trough {
+            background-color: $surface;
+            border-radius: 4px;
+            min-height: 6px;
+        }
+
+        progress {
+            background-color: $accent;
+            border-radius: 4px;
+            min-height: 6px;
+            transition: 1000ms linear;
+        }
+    }
+}
