@@ -13,7 +13,7 @@ A stylized, interactive media player popup built with [Aylur's GTK Shell (AGS)](
 
 ## Prerequisites
 
-- [AGS (v2 / Astal)](https://aylur.github.io/astal/guide/getting-started)
+- [AGS (v2 / Astal)](https://aylur.github.io/ags/)
 - `libadwaita`
 - `playerctl` (for MPRIS backend support)
 
