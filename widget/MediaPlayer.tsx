@@ -6,7 +6,7 @@ import GObject from "gi://GObject?version=2.0";
 import Pango from "gi://Pango?version=1.0"
 import PlayerProgress from "./PlayerProgress";
 // The Player Component
-function Player({ player, cycleButton }: { player: Mpris.Player, cycleButton: GObject.Object }) {
+function Player({ player }: { player: Mpris.Player }) {
     const title = createBinding(player, "title");
     const artist = createBinding(player, "albumArtist");
     const coverArt = createBinding(player, "cover_art");
@@ -110,9 +110,7 @@ function Player({ player, cycleButton }: { player: Mpris.Player, cycleButton: GO
                         </Gtk.Button>
                     </box>
                 </box>
-
             </Gtk.Overlay>
-            {cycleButton}
         </box>
     )
 }
@@ -124,7 +122,6 @@ export default function MediaWindow() {
     const [activeIndex, setActiveIndex] = createState(0);
     const activePlayer = createComputed(() => players()[activeIndex()])
     mpris.connect("notify::players", () => { console.log(mpris.players) });
-    const CycleButton = (players().length > 1) && <button css={"border-radius-top-left: 0px; border-radius-top-right:0px;"} onClicked={() => setActiveIndex((i) => (i + 1) % players().length)}><image iconName={"object-rotate-right-symbolic"} /></button>
     return (
         <window
             name="media-popup"
@@ -187,14 +184,14 @@ export default function MediaWindow() {
                 }}
             >
 
-                <box cssName="media-window-bg" halign={Gtk.Align.CENTER} hexpand
-                    valign={Gtk.Align.START} css={"max-height: 33%; max-width: 50%"} orientation={Gtk.Orientation.VERTICAL}>
-                    <With value={activePlayer}>
-                        {(activePlayer) => activePlayer
-                            ? <Player player={activePlayer} cycleButton={CycleButton || <box />} />
-                            : <label cssName="empty-state" label={"No players active"} />}
+                <Gtk.Box cssName="media-window-bg" halign={Gtk.Align.CENTER} hexpand
+                    valign={Gtk.Align.START} css={"max-height: 33%; max-width: 50%"}>
+                    <With value={players}>
+                        {(players) =>{ console.log(players.length);
+                           return  players.length > 0 ? <box orientation={Gtk.Orientation.VERTICAL}><Player player={activePlayer()} />{players.length > 1? <button css={"border-radius-top-left: 0px; border-radius-top-right:0px;"} onClicked={() => { setActiveIndex((i) => (i + 1) % players.length) }}><image iconName={"object-rotate-right-symbolic"} /></button> : <box/>}</box> : <label label={"No media active"}></label>
+                        }}
                     </With>
-                </box>
+                </Gtk.Box>
             </box>
         </window>
     )
