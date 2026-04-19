@@ -10,11 +10,6 @@ A stylized, interactive media player popup built with [Aylur's GTK Shell (AGS)](
     - **Manual Seeking**: Click or drag the progress bar to jump to a specific time.
     - **Time Display**: Toggle between total track length and remaining time by clicking the time label.
 - **Multiple Player Support**: Easily cycle through multiple active media players (e.g., Spotify, Browser, MPV).
-- **Interactive UI**: 
-    - Hover-sensitive info overlay.
-    - Click-to-dismiss background (Clicking outside the player closes the window).
-    - Keyboard support (Press `Escape` to close).
-- **Modern Aesthetics**: Built with SCSS, featuring transparency, rounded corners, and smooth hover transitions.
 
 ## Prerequisites
 
