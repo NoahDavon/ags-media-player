@@ -2,6 +2,10 @@
 
 A stylized, interactive media player popup built with [Aylur's GTK Shell (AGS)](https://github.com/Aylur/ags). This project uses the GTK4-based version of AGS (Astal) and features a clean, modern UI for controlling media playback.
 
+
+[Kooha-2026-04-19-20-59-03.webm](https://github.com/user-attachments/assets/ea604cc5-c536-4804-a061-f0f863b2e136)
+
+
 ## Features
 
 - **MPRIS Integration**: Real-time track information including title, artist, and cover art.
